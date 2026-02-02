@@ -1,9 +1,9 @@
 #pragma once
 
-#include <memory>
-
+#include "engine/base.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Engine
 {
