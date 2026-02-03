@@ -21,15 +21,15 @@ namespace Octopus
 }
 
 // Core log macros
-#define LOG_CORE_TRACE(...)		::Octopus::Log::GetCoreLogger()->trace(__VA_ARGS__)
-#define LOG_CORE_INFO(...)		::Octopus::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define LOG_CORE_WARN(...)		::Octopus::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define LOG_CORE_ERROR(...)		::Octopus::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define LOG_CORE_CRITICAL(...)	::Octopus::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#define OC_CORE_TRACE(...)		::Octopus::Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define OC_CORE_INFO(...)		::Octopus::Log::GetCoreLogger()->info(__VA_ARGS__)
+#define OC_CORE_WARN(...)		::Octopus::Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define OC_CORE_ERROR(...)		::Octopus::Log::GetCoreLogger()->error(__VA_ARGS__)
+#define OC_CORE_CRITICAL(...)	::Octopus::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
-#define LOG_TRACE(...)			::Octopus::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define LOG_INFO(...)			::Octopus::Log::GetClientLogger()->info(__VA_ARGS__)
-#define LOG_WARN(...)			::Octopus::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define LOG_ERROR(...)			::Octopus::Log::GetClientLogger()->error(__VA_ARGS__)
-#define LOG_CRITICAL(...)		::Octopus::Log::GetClientLogger()->critical(__VA_ARGS__)
+#define OC_TRACE(...)			::Octopus::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define OC_INFO(...)			::Octopus::Log::GetClientLogger()->info(__VA_ARGS__)
+#define OC_WARN(...)			::Octopus::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define OC_ERROR(...)			::Octopus::Log::GetClientLogger()->error(__VA_ARGS__)
+#define OC_CRITICAL(...)		::Octopus::Log::GetClientLogger()->critical(__VA_ARGS__)

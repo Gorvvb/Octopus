@@ -14,7 +14,7 @@ namespace Octopus {
 		std::string Title;
 		unsigned int Width, Height;
 
-		WindowProps(const std::string& title = "Octopus Application",
+		WindowProps(const std::string& title = "Octopus Engine",
 					unsigned int width = 1280,
 					unsigned int height = 720)
 			: Title(title), Width(width), Height(height) { }
