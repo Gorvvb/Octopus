@@ -2,6 +2,8 @@
 #include "Application.h"
 #include "Octopus/Log.h"
 
+#include <glad/glad.h>
+
 #define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
 
 namespace Octopus {

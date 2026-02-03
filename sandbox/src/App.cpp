@@ -8,12 +8,10 @@ class ExampleLayer : public Octopus::Layer
 
 	void OnUpdate() override
 	{
-		OC_INFO("ExampleLayer::OnUpdate");
 	}
 
 	void OnEvent(Octopus::Event& event) override
 	{
-		OC_INFO("ExampleLayer::OnEvent: {0}", event);
 	}
 };
 

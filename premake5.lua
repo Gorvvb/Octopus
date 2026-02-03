@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Octopus/vendor/GLFW/include"
+IncludeDir["glad"] = "Octopus/vendor/glad/include"
 
 include "Octopus/vendor/GLFW"
+include "Octopus/vendor/glad"
 
 project "Octopus"
 	location "Octopus"
@@ -40,13 +42,15 @@ project "Octopus"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glad}",
 	}
 
 	links
 	{
+		"glad",
 		"GLFW",
-		"opengl32.lib"
+		"opengl32.lib",
 	}
 
 	filter "system:windows"
@@ -56,7 +60,8 @@ project "Octopus"
 		defines
 		{
 			"OC_DEBUG",
-			"ENABLE_ASSERTS"
+			"ENABLE_ASSERTS",
+			"GLFW_INCLUDE_NONE"
 		}
 		symbols "On"
 
@@ -89,7 +94,8 @@ project "Sandbox"
 	{
 		"Octopus/src",
 		"Octopus/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glad}",
 	}
 
 	links
