@@ -1,9 +1,9 @@
 #pragma once
 
-#include "pch.h"
-#include "engine/base.h"
+#include "ocpch.h"
+#include "Octopus/base.h"
 
-namespace Engine {
+namespace Octopus {
 
 	enum class EventType
 	{

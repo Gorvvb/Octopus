@@ -1,7 +1,7 @@
-#include "pch.h"
+#include "ocpch.h"
 #include "Log.h"
 
-namespace Engine {
+namespace Octopus {
 
 	std::shared_ptr<spdlog::logger> Log::s_CoreLogger;
 	std::shared_ptr<spdlog::logger> Log::s_ClientLogger;

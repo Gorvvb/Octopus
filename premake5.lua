@@ -12,12 +12,12 @@ workspace "Octopus"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "core/vendor/GLFW/include"
+IncludeDir["GLFW"] = "Octopus/vendor/GLFW/include"
 
-include "core/vendor/GLFW"
+include "Octopus/vendor/GLFW"
 
-project "core"
-	location "core"
+project "Octopus"
+	location "Octopus"
 	kind "StaticLib"
 	language "C++"
 	buildoptions{"/utf-8"}
@@ -25,8 +25,8 @@ project "core"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	pchheader "pch.h"
-	pchsource "core/src/pch.cpp"
+	pchheader "ocpch.h"
+	pchsource "Octopus/src/ocpch.cpp"
 
 	files
 	{
@@ -65,8 +65,8 @@ project "core"
 	filter "configurations:Dist"
 		optimize "On"
 
-project "sandbox"
-	location "sandbox"
+project "Sandbox"
+	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 	buildoptions{"/utf-8"}
@@ -82,14 +82,14 @@ project "sandbox"
 
 	includedirs
 	{
-		"core/src",
-		"core/vendor/spdlog/include",
+		"Octopus/src",
+		"Octopus/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}"
 	}
 
 	links
 	{
-		"core"
+		"Octopus"
 	}
 
 	filter "system:windows"

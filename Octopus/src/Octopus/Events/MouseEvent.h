@@ -2,7 +2,7 @@
 
 #include "Event.h"
 
-namespace Engine {
+namespace Octopus {
 
 	class MouseMovedEvent : public Event
 	{

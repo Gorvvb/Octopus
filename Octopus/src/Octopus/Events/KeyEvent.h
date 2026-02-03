@@ -2,7 +2,7 @@
 
 #include "Event.h"
 
-namespace Engine {
+namespace Octopus {
 	class KeyEvent : public Event
 	{
 	public:

@@ -1,6 +1,6 @@
-[submodule "core/vendor/spdlog"]
-	path = core/vendor/spdlog
+[submodule "Octopus/vendor/spdlog"]
+	path = Octopus/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
-[submodule "core/vendor/GLFW"]
-	path = core/vendor/GLFW
+[submodule "Octopus/vendor/GLFW"]
+	path = Octopus/vendor/GLFW
 	url = https://github.com/Olaverbest/glfw.git

@@ -4,7 +4,7 @@
 #include "events/Event.h"
 #include "Window.h"
 
-namespace Engine {
+namespace Octopus {
 
 	class Application
 	{

@@ -1,7 +1,7 @@
-#include "pch.h"
+#include "ocpch.h"
 #include "Window.h"
 
-namespace Engine {
+namespace Octopus {
 
 	static bool s_GLFWInitialized = false;
 

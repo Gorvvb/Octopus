@@ -1,7 +1,7 @@
-#include "pch.h"
+#include "ocpch.h"
 #include "Application.h"
 
-namespace Engine {
+namespace Octopus {
 
 	Application::Application(const WindowProps& props)
 	{

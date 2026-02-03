@@ -1,18 +1,18 @@
-#include <Engine.h>
+#include <Octopus.h>
 
-class Sandbox : public Engine::Application
+class Sandbox : public Octopus::Application
 {
 public:
 	Sandbox()
 	{
 	}
-
+	
 	~Sandbox()
 	{
 	}
 };
 
-Engine::Application* Engine::CreateApplication()
+Octopus::Application* Octopus::CreateApplication()
 {
 	return new Sandbox();
 }

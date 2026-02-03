@@ -1,20 +1,20 @@
 #pragma once
 
-#include "pch.h"
+#include "ocpch.h"
 
-#include "engine/base.h"
-#include "engine/events/Event.h"
+#include "Octopus/Base.h"
+#include "Octopus/Events/Event.h"
 
 #include <GLFW/glfw3.h>
 
-namespace Engine {
+namespace Octopus {
 
 	struct WindowProps
 	{
 		std::string Title;
 		unsigned int Width, Height;
 
-		WindowProps(const std::string& title = "Application",
+		WindowProps(const std::string& title = "Octopus Application",
 					unsigned int width = 1280,
 					unsigned int height = 720)
 			: Title(title), Width(width), Height(height) { }
