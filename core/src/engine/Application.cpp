@@ -1,13 +1,11 @@
 #include "pch.h"
 #include "Application.h"
 
-#include "engine/events/ApplicationEvent.h"
-#include "engine/log.h"
-
 namespace Engine {
 
-	Application::Application()
+	Application::Application(const WindowProps& props)
 	{
+		m_Window = std::make_unique<Window>(props);
 	}
 
 	Application::~Application()
@@ -16,12 +14,12 @@ namespace Engine {
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		if (e.IsInCategory(EventCategoryApplication))
-			LOG_TRACE(e);
-		if (e.IsInCategory(EventCategoryInput))
-			LOG_TRACE(e);
+		while (m_Running)
+		{
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
 
-		while (true);
+			m_Window->OnUpdate();
+		}
 	}
 }

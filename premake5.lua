@@ -11,6 +11,11 @@ workspace "Octopus"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "core/vendor/GLFW/include"
+
+include "core/vendor/GLFW"
+
 project "core"
 	location "core"
 	kind "StaticLib"
@@ -32,20 +37,27 @@ project "core"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++20"
 		staticruntime "On"
 		systemversion "latest"
-
-		defines
-		{
-		}
 	
 	filter "configurations:Debug"
 		symbols "On"
+		defines
+		{
+			"ENABLE_ASSERTS"
+		}
 
 	filter "configurations:Release"
 		optimize "On"
@@ -70,8 +82,9 @@ project "sandbox"
 
 	includedirs
 	{
+		"core/src",
 		"core/vendor/spdlog/include",
-		"core/src"
+		"%{IncludeDir.GLFW}"
 	}
 
 	links
@@ -83,13 +96,13 @@ project "sandbox"
 		cppdialect "C++20"
 		staticruntime "On"
 		systemversion "latest"
-
-		defines
-		{
-		}
 	
 	filter "configurations:Debug"
 		symbols "On"
+		defines
+		{
+			"ENABLE_ASSERTS"
+		}
 
 	filter "configurations:Release"
 		optimize "On"
